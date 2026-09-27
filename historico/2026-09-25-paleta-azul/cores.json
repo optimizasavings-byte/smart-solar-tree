@@ -1,0 +1,19 @@
+{
+  "theme-color": "#0000cf",
+  "variaveis": {
+    "--bg": "#0000f2",
+    "--accent": "#f5f5f5",
+    "--yellow": "#ffcd42",
+    "--text": "#f5f5f5",
+    "--muted": "#dcdcff",
+    "--line": "#f5f5f540",
+    "--surface": "#0000cf",
+    "--surface-raised": "#2020ef",
+    "--surface-deep": "#000091",
+    "--ink": "#0000b8",
+    "--accent-hover": "#ffffff",
+    "--mint": "#6effd6",
+    "--border": "#aaaaff80",
+    "--heading": "'Space Grotesk',sans-serif"
+  }
+}

@@ -97,3 +97,39 @@ A publicação no GitHub e a ativação do e-mail não foram executadas automati
 - Capturas revisadas com movimento reduzido. O vídeo original foi preservado; a revisão visual por amostragem não substitui a aprovação integral do audiovisual pela equipe.
 
 Os testes de navegador usaram ferramentas em pasta temporária, sem adicionar dependências ao site. A entrega não contém segredos, senhas ou tokens.
+
+## Histórico de cores
+
+A paleta Verde Solar foi aplicada em 25/09/2026, com verde-esmeralda, lima, menta e amarelo solar. As variáveis principais ficam no início de `styles.css`.
+
+A paleta anterior está preservada com CSS completo, inventário de cores e [instruções de restauração](historico/2026-09-25-paleta-original/README.md).
+
+### Versao anterior: Azul Hermes
+
+Aplicada em 25/09/2026: azul intenso `#0000f2`, superfícies em azul profundo, texto e botões claros, amarelo solar e detalhes em menta, inspirados no [Hermes Agent](https://hermes-agent.nousresearch.com/). Os tokens de destaque agora se chamam `--accent` e `--accent-hover`.
+
+A versão Verde Solar também foi preservada: [restaurar o verde](historico/2026-09-25-paleta-verde/README.md). Os PDFs verde e azul ficam na pasta `divulgacao` para comparação.
+
+### Paleta atual: Bio-Tech Solar
+
+A identidade atual usa os tokens solicitados: fundos Deep Bio (`--bg-main`, `--bg-surface`, `--bg-surface-elevated`), amarelo solar para ações e verde neon para tecnologia. As cores estão centralizadas no `:root` de `styles.css`.
+
+- `.button--solar`: ações principais, texto escuro e hover amarelo luminoso.
+- `.button--outline`: ação secundária com contorno neon.
+- `.card[data-tone="tech"]` / `.card[data-tone="solar"]`: ícones, linha superior e estados de hover por função.
+- Hero com halos de luz, grade e órbitas; etapa de decisão e próximo marco destacados em amarelo.
+- Campos com foco neon, contraste de bordas reforçado e preferência por movimento reduzido respeitada.
+- HTML com `data-theme="bio-tech-solar"` e comentários identificando as melhorias; logo e vídeo originais preservados.
+
+[Restaurar a versão azul](historico/2026-09-25-paleta-azul/README.md). As versões verde e original também continuam no histórico.
+
+Componentes refinados: CTAs com peso 600 e glow solar, bot?es secund?rios claros, gradiente radial solar no hero, badges neon, cards nas etapas e na equipe, ?cones de energia amarelos. Hover e foco respeitam movimento reduzido.
+
+## Atualização para publicação — 27/09/2026
+
+- Repositório: https://github.com/optimizasavings-byte/smart-solar-tree
+- Site: https://optimizasavings-byte.github.io/smart-solar-tree/
+- O site usa `assets/logo-transparente.png`, com canal alpha. O logo original permanece em `assets/logo.png`. A edição por imagegen também intensificou cores e contornos.
+- Para trocar o logo atual, atualize `assets/logo-transparente.png` e as dimensões da imagem em `index.html`.
+- O player usa `assets/smart-solar-tree-web.mp4`: cópia em 720p, H.264/AAC e faststart, otimizada a partir do vídeo local. O arquivo local de origem `assets/smart-solar-tree.mp4` foi preservado e sua alteração de 392 MB não faz parte deste envio.
+- `historico/` preserva as paletas anteriores; `divulgacao/` contém os PDFs e o QR Code com a URL do site.
