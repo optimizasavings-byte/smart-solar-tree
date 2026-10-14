@@ -183,3 +183,8 @@ Esta integração utiliza o código padrão fornecido pelo Google. Não adiciona
 Para trocar a propriedade, atualize o ID nos dois pontos do bloco: URL do script e chamada `gtag('config', ...)`. A tag também carrega ao abrir a página localmente com internet. Nos testes automatizados, as requisições do Google são interceptadas para não registrar visitas de teste na propriedade.
 
 Após aprovação e publicação no GitHub Pages, abra o site e confira **Relatórios → Tempo real** na propriedade correspondente. A instalação local não comprova recebimento no Google: essa confirmação deve ocorrer após o deploy, com a tag acessível e sem bloqueadores de rastreamento. Nenhum commit, push ou deploy foi executado nesta alteração.
+
+
+### Cache de estilos no GitHub Pages
+
+O link do CSS em `index.html` inclui `?v=` com os primeiros 12 caracteres do SHA-256 do conteúdo UTF-8 de `styles.css` (quebras de linha normalizadas para LF). Isso evita combinar o HTML novo com o CSS de uma publicação anterior armazenado no navegador. Ao alterar o CSS, atualize essa versão no HTML antes de publicar. O arquivo permanece `styles.css`, com caminho relativo compatível com abertura local e `/smart-solar-tree/`.
