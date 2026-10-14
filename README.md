@@ -30,7 +30,7 @@ Para servir localmente, execute na pasta do projeto:
 python -m http.server 8080
 ```
 
-Abra `http://localhost:8080`. Não há instalação ou compilação. O código não salva dados em localStorage, cookies ou banco local.
+Abra `http://localhost:8080`. Não há instalação ou compilação. O formulário não salva dados em localStorage ou banco local. A integração Google Analytics descrita abaixo pode usar cookies de medição.
 
 ## Substituir logo e vídeo
 
@@ -133,3 +133,53 @@ Componentes refinados: CTAs com peso 600 e glow solar, bot?es secund?rios claros
 - Para trocar o logo atual, atualize `assets/logo-transparente.png` e as dimensões da imagem em `index.html`.
 - O player usa `assets/smart-solar-tree-web.mp4`: cópia em 720p, H.264/AAC e faststart, otimizada a partir do vídeo local. O arquivo local de origem `assets/smart-solar-tree.mp4` foi preservado e sua alteração de 392 MB não faz parte deste envio.
 - `historico/` preserva as paletas anteriores; `divulgacao/` contém os PDFs e o QR Code com a URL do site.
+
+## Quem Somos — 13/10/2026
+
+A seção `#equipe` foi aprimorada no mesmo ponto da página: depois da visão do projeto e antes do convite para parcerias e contato. Isso mantém a jornada da proposta tecnológica para as pessoas responsáveis e, em seguida, para a conversa com o visitante. Menu, âncoras, cabeçalho, rodapé, metadados, formulário e `script.js` foram preservados.
+
+### Conteúdo e manutenção
+
+- `index.html`: apresentação institucional, cinco artigos com nome, competência, biografia integral e LinkedIn, além do bloco separado de orientação acadêmica do Professor Paulo Sergio Silva Rodrigues. Os textos estão agrupados por integrante dentro de `#equipe`, inclusive sem JavaScript.
+- `styles.css`: estilos `team-*`, usando os tokens Bio-Tech Solar e as fontes existentes. Heitor aparece primeiro, com selo e borda verde discreta; os outros quatro cartões formam duas colunas a partir de 700 px e uma abaixo disso. As biografias ficam sempre abertas. Animações de entrada reutilizam `data-reveal`; a preferência por movimento reduzido é respeitada.
+- `README.md`: registro da implementação, testes e publicação.
+- As cinco fotografias fornecidas, em `assets/images/`, são usadas sem modificar os arquivos: `Heitor.jfif`, `Rafael.jfif`, `Nádia Vieira.jfif`, `Vinicius.jfif` e `Giovanna.jfif`. Já possuem 400 × 400 px e somam aproximadamente 149 KiB; a conversão não foi necessária. Exibição quadrada, sem ampliação ou recorte adicional, com `object-fit: cover`, texto alternativo, dimensões explícitas e carregamento preguiçoso. O caminho de Nádia usa codificação de URL para o acento e o espaço.
+
+Para atualizar um integrante, edite seu `article.team-card` no HTML. Mantenha o nome acessível do link, `target="_blank"`, `rel="noopener noreferrer"`, os atributos da imagem e a correspondência entre `aria-labelledby` e o ID do título.
+
+### Validação desta alteração
+
+Chrome headless local, com Playwright já disponível no ambiente; nenhuma biblioteca foi adicionada ao projeto.
+
+- 360, 768, 1024 e 1440 px: cinco fotos carregadas, proporção quadrada, colunas esperadas e ausência de rolagem horizontal.
+- Biografias comparadas literalmente com a missão fornecida; cinco integrantes, ordem e selo de Heitor conferidos.
+- Destinos dos cinco links comparados com a missão; abertura em nova aba exercitada com interceptação local. A disponibilidade dos perfis no LinkedIn não foi verificada externamente.
+- Âncoras existentes válidas; menu mobile, fechamento ao navegar e Escape com retorno de foco testados.
+- Foco de teclado visível e movimento reduzido verificados; conteúdo dos cartões também verificado com JavaScript desabilitado.
+- Formulário: campos obrigatórios e respostas simuladas de sucesso, rejeição e falha de rede. Campos preservados nas falhas e limpos no sucesso. Nenhum e-mail real enviado; entrega na caixa postal não é comprovada por esses testes.
+- Prefixo `/smart-solar-tree/` validado em navegador com reescrita local das requisições, preservando a resolução relativa de URLs: cinco fotos carregadas; nenhuma resposta HTTP de erro nessa verificação.
+- Capturas nas quatro larguras revisadas visualmente; animações com movimento normal verificadas, com todos os cartões tornando-se visíveis.
+- Comparação com a versão Git confirmou que o HTML fora de `#equipe` e o JavaScript estão intactos.
+- `node --check script.js` executado. Não existe etapa de build, pacote de dependências ou suíte de testes no repositório: os arquivos estáticos são a versão de produção.
+- Um aviso 404 de `/favicon.ico` já existente foi observado. Nenhum erro de execução JavaScript foi detectado; a falha de rede do formulário foi provocada pelo teste.
+
+A referência publicada não pôde ser consultada pela ferramenta web; a implementação utilizou o código local como fonte principal. A alteração preexistente em `assets/smart-solar-tree.mp4` foi mantida e não integra esta entrega.
+
+### Revisar localmente e publicar após aprovação
+
+Execute `python -m http.server 8080` na raiz e abra `http://localhost:8080/#equipe`. Confira nomes, enquadramento das fotos e conteúdo antes de aprovar a publicação. O servidor de validação automatizada pode ser encerrado; esse comando inicia uma nova prévia.
+
+Após aprovação, inclua **apenas** `index.html`, `styles.css`, `README.md` e as cinco fotografias fornecidas no commit destinado à branch já usada pelo GitHub Pages. As fotografias ainda não estavam versionadas no início desta tarefa. Não use `git add .`, pois há uma alteração independente no vídeo original. Faça push pela rotina existente e acompanhe o deploy no GitHub. Preserve `.nojekyll`, a configuração atual e a raiz do site; os caminhos relativos atendem ao prefixo `/smart-solar-tree/`. Confira depois a URL publicada com `#equipe` e o carregamento das cinco fotos.
+
+Nenhum commit, push, merge ou deploy foi realizado nesta tarefa.
+
+
+## Google Analytics 4 — 13/10/2026
+
+A tag fornecida pelo responsável foi adicionada uma única vez ao `head` de `index.html`, com carregamento assíncrono e ID de medição `G-B57P1L99JD`. Não exige biblioteca, build, Google Tag Manager ou mudança na hospedagem GitHub Pages. A coleta começa após publicar esta versão; não recupera visitas anteriores.
+
+Esta integração utiliza o código padrão fornecido pelo Google. Não adiciona eventos personalizados de envio do formulário, não envia seus campos explicitamente e não inclui um gerenciador de consentimento. Os eventos automáticos adicionais dependem das configurações de medição otimizada do fluxo no Google Analytics. Um evento automático de formulário não comprova entrega de e-mail.
+
+Para trocar a propriedade, atualize o ID nos dois pontos do bloco: URL do script e chamada `gtag('config', ...)`. A tag também carrega ao abrir a página localmente com internet. Nos testes automatizados, as requisições do Google são interceptadas para não registrar visitas de teste na propriedade.
+
+Após aprovação e publicação no GitHub Pages, abra o site e confira **Relatórios → Tempo real** na propriedade correspondente. A instalação local não comprova recebimento no Google: essa confirmação deve ocorrer após o deploy, com a tag acessível e sem bloqueadores de rastreamento. Nenhum commit, push ou deploy foi executado nesta alteração.
