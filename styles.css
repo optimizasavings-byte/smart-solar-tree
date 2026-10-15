@@ -409,9 +409,6 @@ input:not([type=checkbox]):focus-visible,select:focus-visible,textarea:focus-vis
 .team-link span{margin-left:4px}
 .team-card--founder{border-color:var(--border-active)}
 .team-badge{display:inline-flex;max-width:100%;padding:5px 11px;margin-bottom:18px;border:1px solid var(--border-active);border-radius:999px;background:var(--accent-neon-subtle);color:var(--accent-neon);font-size:12px;font-weight:600}
-.team-advisor{margin-top:32px;padding:24px 0 0;border-top:1px solid var(--border-subtle)}
-.team-advisor h3{font-size:16px;color:var(--accent-neon);margin-bottom:10px;letter-spacing:0}
-.team-advisor p{color:var(--text-primary);margin:0}
 @media(min-width:700px){
   .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .team-card--founder{grid-column:1/-1;flex-direction:row;align-items:flex-start;gap:32px}
@@ -421,5 +418,11 @@ input:not([type=checkbox]):focus-visible,select:focus-visible,textarea:focus-vis
   .team-story{grid-template-columns:1fr 1fr}
   .team-card{padding:32px}
   .team-card--founder .team-photo{width:220px}
-  .team-advisor{display:flex;align-items:baseline;gap:32px}
+}
+
+/* Orientador em cartão próprio, após os cinco integrantes. */
+.team-card--advisor{margin-top:24px}
+@media(min-width:700px){
+  .team-card--advisor{flex-direction:row;align-items:flex-start;gap:32px}
+  .team-card--advisor .team-photo{flex-shrink:0}
 }

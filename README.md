@@ -188,3 +188,12 @@ Após aprovação e publicação no GitHub Pages, abra o site e confira **Relat�
 ### Cache de estilos no GitHub Pages
 
 O link do CSS em `index.html` inclui `?v=` com os primeiros 12 caracteres do SHA-256 do conteúdo UTF-8 de `styles.css` (quebras de linha normalizadas para LF). Isso evita combinar o HTML novo com o CSS de uma publicação anterior armazenado no navegador. Ao alterar o CSS, atualize essa versão no HTML antes de publicar. O arquivo permanece `styles.css`, com caminho relativo compatível com abertura local e `/smart-solar-tree/`.
+
+
+## Orientador Acadêmico — 14/10/2026
+
+O bloco simples de orientação foi substituído por um cartão do Prof. Dr. Paulo Sergio Rodrigues, após os cinco integrantes. Reutiliza os estilos `team-card`, `team-photo`, `team-badge` e `team-link`, com biografia e especialidades fornecidas pelo responsável e link seguro em nova aba para o Currículo Lattes. Heitor mantém seu destaque inicial; as demais biografias não foram alteradas.
+
+A foto fornecida como `assets/images/Paulo Sergio Silva Rodrigues.gif` contém dados JPEG (512 × 512 px). O original foi preservado; `Paulo Sergio Silva Rodrigues.jpg` é uma cópia byte a byte com a extensão correspondente ao conteúdo. Nenhuma edição de aparência, compressão ou geração de imagem foi aplicada. O caminho relativo com espaços codificados funciona sob `/smart-solar-tree/`. A versão do CSS foi atualizada para evitar reutilização de estilos antigos em cache.
+
+Arquivos desta alteração: `index.html`, `styles.css`, `README.md` e a nova cópia `.jpg`. A publicação e o carregamento dessa nova foto na URL pública dependem de autorização e deploy; não houve commit, push ou deploy nesta atualização.
